@@ -21,7 +21,7 @@ public class TCPClient {
 	}
 	
 	public static void sendFile(String fileText) throws IOException {
-		outToServer.writeBytes(fileText.replaceAll("\n", "_newline_") + "\n");
+		outToServer.writeBytes("send_file " + fileText.replaceAll("\n", "_newline_") + "\n");
 	}
 	
 	public static void connect() throws IOException {
