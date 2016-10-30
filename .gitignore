@@ -1,0 +1,8 @@
+*.class
+*.txt
+Programs/
+
+# Package Files #
+*.war
+*.ear
+/bin
