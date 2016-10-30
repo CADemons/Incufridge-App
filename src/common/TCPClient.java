@@ -24,6 +24,13 @@ public class TCPClient {
 		outToServer.writeBytes("send_file " + fileText.replaceAll("\n", "_newline_") + "\n");
 	}
 	
+	public static void getLog() throws IOException {
+		outToServer.writeBytes("get_log\n");
+		String log = inFromServer.readLine().trim().replaceAll("_newline_", "\n");
+		TextFileWriter.deleteFile("log.txt");
+		TextFileWriter.writeToFile("log.txt", log);
+	}
+	
 	public static void connect() throws IOException {
 		Socket clientSocket = new Socket("108.168.213.183", 26517);
 		outToServer = new DataOutputStream(clientSocket.getOutputStream());
