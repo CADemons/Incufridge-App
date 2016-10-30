@@ -13,9 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.text.DefaultCaret;
 
-import common.Communicator;
 import common.ConsoleWriter;
-import common.LineParser;
 import common.TCPClient;
 
 /* This class contains the code for the JPanel used to display the console */
@@ -89,7 +87,12 @@ public class ConsolePanel extends JPanel {
 			}
 			
 			if (e.getSource() == inputField) {
-				Communicator.sendCommand(LineParser.parseCommand(inputField.getText()));
+				try {
+					TCPClient.runCommand(inputField.getText());
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				inputField.setText("");
 			}
 			
