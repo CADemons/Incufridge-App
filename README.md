@@ -1,10 +1,11 @@
 Incufridge-Client
 =================
 
-Java code for the Incufridge client.
+Java code for the Incufridge App.
 
-#Usage
+# Usage
 
-This code should be run from a raspberry pi connected to the Incufridge
-There is a GUI, but it does should not be used.
-Instead, to interact with the fridge (making programs...) go to the [incufridge website] (http://cademons.org/incu/)
+This is the Incufridge App which allows the user to connect to the Incufridge over
+the internet and run commands on it.
+
+To run the program, download and install Java and run `./run.sh` (unix) or `.\run.batch` (windows).
