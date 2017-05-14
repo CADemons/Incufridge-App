@@ -35,6 +35,8 @@ public class TCPClient {
 		Socket clientSocket = new Socket("108.168.213.183", 26517);
 		outToServer = new DataOutputStream(clientSocket.getOutputStream());
 		inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+		String password = TextFileReader.readEntireFile("auth").trim();
+		outToServer.writeBytes(password + "\n");
 		outToServer.writeBytes("client\n");
 		inFromServer.readLine();
 //		while (true) {
